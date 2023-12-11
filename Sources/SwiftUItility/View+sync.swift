@@ -9,7 +9,7 @@ import SwiftUI
 
 public extension View {
     
-    func sync<T: Equatable>(_ binding: Binding<T>, with focusState: FocusState<T>.Binding) -> some View {
+    @ViewBuilder func sync<T: Equatable>(_ binding: Binding<T>, with focusState: FocusState<T>.Binding) -> some View {
         self
             .onChange(of: binding.wrappedValue) {
                 focusState.wrappedValue = $0
