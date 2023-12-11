@@ -11,7 +11,7 @@ public class SpinnerController {
     
     private var acitivity: UIActivityIndicatorView?
     
-    public func start(style: UIActivityIndicatorView.Style = .medium) {
+    public func start(_ style: UIActivityIndicatorView.Style = .medium) {
         DispatchQueue.main.async { [weak self] in
             guard let self else { return }
             let root = UIApplication.shared.root
