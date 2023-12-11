@@ -39,7 +39,7 @@ public class SpinnerController {
 }
 
 public struct SpinnerKey: EnvironmentKey {
-    public static let defaultValue: SpinnerController = SpinnerController()
+    public static let defaultValue = SpinnerController()
 }
 
 public extension EnvironmentValues {

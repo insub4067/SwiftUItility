@@ -53,7 +53,7 @@ public class ToastController {
 }
 
 public struct ToastKey: EnvironmentKey {
-    public static let defaultValue: ToastController = ToastController()
+    public static let defaultValue = ToastController()
 }
 
 public extension EnvironmentValues {
