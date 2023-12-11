@@ -47,5 +47,4 @@ public extension EnvironmentValues {
         self[SpinnerKey.self]
     }
 }
-
 #endif
