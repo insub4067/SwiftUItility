@@ -9,19 +9,15 @@ import SwiftUI
 
 public struct SafeAreaInsetsKey: EnvironmentKey {
     public static var defaultValue: EdgeInsets {
-        let scene = UIApplication
+        
+        let safeAreaInsets = UIApplication
             .shared
-            .connectedScenes
-            .first as? UIWindowScene
-
-        let safeAreaInsets = scene?
-            .windows
-            .first(where: { $0.isKeyWindow })?
+            .window?
             .safeAreaInsets
         
         guard let safeAreaInsets else { return .init() }
 
-        return EdgeInsets(
+        return .init(
             top: safeAreaInsets.top,
             leading: safeAreaInsets.left,
             bottom: safeAreaInsets.bottom,
@@ -40,7 +36,12 @@ public extension EnvironmentValues {
 public extension UIEdgeInsets {
     
     var insets: EdgeInsets {
-        EdgeInsets(top: top, leading: left, bottom: bottom, trailing: right)
+        .init(
+            top: top,
+            leading: left,
+            bottom: bottom,
+            trailing: right
+        )
     }
 }
 #endif
