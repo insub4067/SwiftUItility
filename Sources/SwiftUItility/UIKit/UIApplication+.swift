@@ -21,5 +21,9 @@ public extension UIApplication {
             .windows
             .first(where: { $0.isKeyWindow })
     }
+    
+    var root: UIViewController? {
+        window?.rootViewController
+    }
 }
 #endif
