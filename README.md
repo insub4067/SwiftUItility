@@ -53,7 +53,7 @@ struct ContentView: View {
     var body: some View {
         
         TextField("Placeholder", text: $text)
-            .sync($viewModel.isFocused, with: $isFocused)
+            .syncFocused($viewModel.isFocused, with: $isFocused)
     }
 }
 
