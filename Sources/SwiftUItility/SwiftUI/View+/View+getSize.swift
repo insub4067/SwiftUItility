@@ -12,13 +12,13 @@ public extension View {
     @ViewBuilder func getSize(_ size: @escaping (CGSize) -> Void) -> some View {
         self
             .background(
-                    GeometryReader { geometry in
-                        Color.clear
-                            .onAppear {
-                                size(geometry.size)
-                            }
-                    }
-                )
+                GeometryReader { geometry in
+                    Color.clear
+                        .onAppear {
+                            size(geometry.size)
+                        }
+                }
+            )
     }
 }
 #endif
