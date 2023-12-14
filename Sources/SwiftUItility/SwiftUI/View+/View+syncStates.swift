@@ -22,7 +22,7 @@ public extension View {
                         anotherState.wrappedValue = state.wrappedValue
                     }
                 case false:
-                    anotherState.wrappedValue = state.wrappedValue
+                    anotherState.wrappedValue = $0
                 }
             }
             .onChange(of: anotherState.wrappedValue) {
@@ -32,7 +32,7 @@ public extension View {
                         state.wrappedValue = anotherState.wrappedValue
                     }
                 case false:
-                    state.wrappedValue = anotherState.wrappedValue
+                    state.wrappedValue = $0
                 }
             }
     }
